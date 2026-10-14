@@ -89,3 +89,12 @@ Los 179 recursos gráficos provienen de las respuestas de Figma MCP. Las fuentes
 
 ## Verificación de esta entrega
 Se comprobó la existencia y contenido no vacío de todas las referencias, los 139 destinos de las reacciones de Figma, 359 enlaces locales y 216 llamadas a imágenes en las 55 pantallas. Se validó la sintaxis JavaScript y CSS y se ejecutaron las interacciones en un DOM de prueba. No se pudo verificar el renderizado visual, la geometría final de las imágenes ni los tamaños responsive en un navegador real porque la infraestructura de vista previa no respondió. El detalle se guarda en verification.json.
+
+## Corrección de Inicio de Usuario
+La pantalla 92:3081 utiliza una estructura propia y css/usuario-inicio.css para evitar que los Frames internos llamados HomeScreen reciban reglas de pantalla completa. Se conservaron los recursos originales y la navegación. El informe de esta revisión está en usuario-inicio-review.json. La inspección automatizada del archivo local fue bloqueada por la política file:// del navegador; la comprobación visual permanece pendiente.
+
+## Corrección responsive de Ayuda
+Las pantallas 92:3822 y 92:3942 usan css/usuario-ayuda.css con tarjetas de altura automática, textos que se adaptan al ancho disponible y navegación en flujo normal. Se reutiliza la navegación de Inicio. Ayuda 1 enlaza al estado abierto Ayuda 2; la primera pregunta permite regresar al estado cerrado. Los textos y SVG se conservaron. Informe: usuario-ayuda-review.json. La verificación visual en navegador permanece pendiente por la restricción file://.
+
+## Revisión de Asesor de crédito
+Las 37 pantallas incluyen css/asesor-responsive.css y js/asesor.js. Se corrigieron anchos/alturas rígidos, resúmenes, formularios, tarjetas, tablas y el selector. [Informe completo](asesor-responsive-review.md). La cascada CSS se comprobó a 320, 375, 403 y 768 px; la inspección visual en navegador real permanece pendiente.
